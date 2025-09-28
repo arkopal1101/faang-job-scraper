@@ -1,0 +1,820 @@
+{
+  "companies": {
+    "meta": {
+      "name": "Meta",
+      "display_name": "Meta (Facebook)",
+      "careers_url": "https://careers.meta.com/jobs/",
+      "scraper_class": "MetaScraper",
+      "enabled": true,
+      "rate_limit": 2,
+      "max_pages": 10,
+      "selectors": {
+        "job_listing": "div[data-testid='job-posting']",
+        "job_link": "a[data-testid='job-posting-link']",
+        "title": "h3[data-testid='job-title']",
+        "location": "span[data-testid='job-location']",
+        "department": "span[data-testid='job-department']",
+        "posted_date": "span[data-testid='job-posted-date']",
+        "job_type": "span[data-testid='job-type']",
+        "description": "div[data-testid='job-description']",
+        "requirements": "div[data-testid='job-requirements']",
+        "next_button": "button[aria-label='Next page']",
+        "load_more": "button[data-testid='load-more-jobs']"
+      },
+      "search_params": {
+        "location": "",
+        "job_type": "",
+        "team": ""
+      },
+      "request_config": {
+        "headers": {
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+          "Accept-Language": "en-US,en;q=0.5",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "Upgrade-Insecure-Requests": "1"
+        },
+        "timeout": 30
+      }
+    },
+    "amazon": {
+      "name": "Amazon",
+      "display_name": "Amazon",
+      "careers_url": "https://amazon.jobs/en/search",
+      "scraper_class": "AmazonScraper",
+      "enabled": true,
+      "rate_limit": 3,
+      "max_pages": 15,
+      "selectors": {
+        "job_listing": "div.job-tile",
+        "job_link": "a.job-title-link",
+        "title": "h3.job-title",
+        "location": "p.location-and-id",
+        "department": "p.job-category",
+        "posted_date": "p.posted-date",
+        "job_type": "span.job-type",
+        "description": "div.job-description",
+        "requirements": "div.basic-qualifications",
+        "next_button": "a[aria-label='Next page of results']",
+        "search_results": "div.search-results-container"
+      },
+      "search_params": {
+        "category": "",
+        "distanceType": "Mi",
+        "radius": "24km",
+        "latitude": "",
+        "longitude": "",
+        "loc_physical_ms": "",
+        "loc_virtual_ms": "",
+        "businessCategory": "",
+        "is_manager": "false",
+        "normalizedCountryCode": "US"
+      },
+      "request_config": {
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Accept-Language": "en-US,en;q=0.9",
+          "Content-Type": "application/json",
+          "X-Requested-With": "XMLHttpRequest"
+        },
+        "timeout": 45
+      }
+    },
+    "apple": {
+      "name": "Apple",
+      "display_name": "Apple Inc.",
+      "careers_url": "https://jobs.apple.com/en-us/search",
+      "scraper_class": "AppleScraper",
+      "enabled": true,
+      "rate_limit": 2,
+      "max_pages": 12,
+      "selectors": {
+        "job_listing": "table.table--advanced-search tr.table-row",
+        "job_link": "a.table--advanced-search__title",
+        "title": "a.table--advanced-search__title",
+        "location": "td.table-col-1",
+        "department": "td.table-col-2",
+        "posted_date": "td.table-col-3",
+        "job_type": "td.table-col-4",
+        "description": "div.jd-info",
+        "requirements": "div.job-aux-info",
+        "next_button": "a.next",
+        "search_form": "form.search-form"
+      },
+      "search_params": {
+        "team": "",
+        "location": "",
+        "keywords": "",
+        "sort": "newest"
+      },
+      "request_config": {
+        "headers": {
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+          "Accept-Language": "en-US,en;q=0.5",
+          "Cache-Control": "no-cache",
+          "Pragma": "no-cache"
+        },
+        "timeout": 35
+      }
+    },
+    "netflix": {
+      "name": "Netflix",
+      "display_name": "Netflix",
+      "careers_url": "https://jobs.netflix.com/search",
+      "scraper_class": "NetflixScraper",
+      "enabled": true,
+      "rate_limit": 1,
+      "max_pages": 8,
+      "selectors": {
+        "job_listing": "div.job-card",
+        "job_link": "a.job-card-link",
+        "title": "h4.job-card-title",
+        "location": "div.job-card-location",
+        "department": "div.job-card-team",
+        "posted_date": "div.job-card-date",
+        "job_type": "div.job-card-type",
+        "description": "div.job-description-content",
+        "requirements": "div.job-requirements",
+        "next_button": "button.pagination-next",
+        "load_more": "button.load-more-jobs"
+      },
+      "search_params": {
+        "team": "",
+        "location": "",
+        "workplace_type": "",
+        "experience": ""
+      },
+      "request_config": {
+        "headers": {
+          "Accept": "application/json, text/javascript, */*; q=0.01",
+          "Accept-Language": "en-US,en;q=0.9",
+          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+          "X-Requested-With": "XMLHttpRequest"
+        },
+        "timeout": 30
+      }
+    },
+    "google": {
+      "name": "Google",
+      "display_name": "Google LLC",
+      "careers_url": "https://careers.google.com/jobs/results/",
+      "scraper_class": "GoogleScraper",
+      "enabled": true,
+      "rate_limit": 2,
+      "max_pages": 15,
+      "selectors": {
+        "job_listing": "li.lLd3Je",
+        "job_link": "a.WpHeLc",
+        "title": "h3.QJPWVe",
+        "location": "span.r0wTof",
+        "department": "span.wVSTAb",
+        "posted_date": "span.OPbIxe",
+        "job_type": "span.II90h",
+        "description": "div.HBvzbc",
+        "requirements": "div.yQVKgd",
+        "next_button": "a[aria-label='Next']",
+        "search_button": "button.RveJvd",
+        "search_input": "input.YpqMNe"
+      },
+      "search_params": {
+        "category": "",
+        "employment_type": "FULL_TIME",
+        "hl": "en_US",
+        "jlo": "en_US",
+        "q": "",
+        "sort_by": "date"
+      },
+      "request_config": {
+        "headers": {
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+          "Accept-Language": "en-US,en;q=0.5",
+          "Accept-Encoding": "gzip, deflate, br",
+          "DNT": "1",
+          "Connection": "keep-alive",
+          "Sec-Fetch-Dest": "document",
+          "Sec-Fetch-Mode": "navigate",
+          "Sec-Fetch-Site": "none"
+        },
+        "timeout": 40
+      }
+    }
+  },
+  "job_categories": {
+    "technology": {
+      "name": "Technology & Engineering",
+      "keywords": [
+        "software",
+        "engineer",
+        "developer",
+        "programming",
+        "coding",
+        "technical",
+        "architect",
+        "devops",
+        "data scientist",
+        "machine learning",
+        "ai",
+        "artificial intelligence",
+        "cloud",
+        "infrastructure",
+        "backend",
+        "frontend",
+        "fullstack",
+        "mobile",
+        "ios",
+        "android",
+        "web",
+        "api",
+        "database",
+        "security",
+        "cybersecurity",
+        "network",
+        "systems",
+        "platform",
+        "sre",
+        "reliability",
+        "qa",
+        "quality assurance",
+        "test",
+        "automation",
+        "javascript",
+        "python",
+        "java",
+        "c++",
+        "react",
+        "node",
+        "aws",
+        "azure",
+        "gcp",
+        "kubernetes",
+        "docker",
+        "microservices"
+      ],
+      "departments": [
+        "engineering",
+        "technology",
+        "it",
+        "software",
+        "data",
+        "security",
+        "infrastructure",
+        "platform",
+        "technical",
+        "development",
+        "research",
+        "ai",
+        "ml"
+      ]
+    },
+    "product": {
+      "name": "Product Management",
+      "keywords": [
+        "product manager",
+        "product management",
+        "product owner",
+        "product strategy",
+        "roadmap",
+        "feature",
+        "user experience",
+        "user research",
+        "analytics",
+        "growth",
+        "monetization",
+        "go-to-market",
+        "gtm",
+        "product marketing",
+        "product ops",
+        "agile",
+        "scrum",
+        "kpi"
+      ],
+      "departments": [
+        "product",
+        "product management",
+        "growth",
+        "strategy"
+      ]
+    },
+    "design": {
+      "name": "Design & User Experience",
+      "keywords": [
+        "designer",
+        "design",
+        "ux",
+        "ui",
+        "user experience",
+        "user interface",
+        "visual design",
+        "interaction design",
+        "graphic design",
+        "brand",
+        "creative",
+        "art director",
+        "illustrator",
+        "motion graphics",
+        "figma",
+        "sketch",
+        "adobe",
+        "prototype",
+        "wireframe",
+        "usability",
+        "research",
+        "content design",
+        "design systems"
+      ],
+      "departments": [
+        "design",
+        "creative",
+        "ux",
+        "ui",
+        "brand",
+        "marketing creative"
+      ]
+    },
+    "sales": {
+      "name": "Sales & Business Development",
+      "keywords": [
+        "sales",
+        "business development",
+        "account manager",
+        "sales manager",
+        "sales rep",
+        "business development",
+        "partnerships",
+        "enterprise sales",
+        "inside sales",
+        "outside sales",
+        "territory",
+        "quota",
+        "revenue",
+        "deals",
+        "crm",
+        "salesforce",
+        "lead generation",
+        "prospecting",
+        "closing",
+        "negotiation",
+        "account executive",
+        "sales engineer"
+      ],
+      "departments": [
+        "sales",
+        "business development",
+        "partnerships",
+        "revenue",
+        "commercial"
+      ]
+    },
+    "marketing": {
+      "name": "Marketing & Communications",
+      "keywords": [
+        "marketing",
+        "digital marketing",
+        "content marketing",
+        "social media",
+        "campaigns",
+        "brand marketing",
+        "performance marketing",
+        "growth marketing",
+        "email marketing",
+        "seo",
+        "sem",
+        "paid media",
+        "communications",
+        "pr",
+        "public relations",
+        "content",
+        "copywriter",
+        "marketing manager",
+        "demand generation",
+        "lead generation",
+        "conversion",
+        "analytics",
+        "attribution",
+        "roi",
+        "advertising",
+        "creative",
+        "brand"
+      ],
+      "departments": [
+        "marketing",
+        "communications",
+        "pr",
+        "brand",
+        "growth",
+        "digital",
+        "content",
+        "advertising",
+        "media"
+      ]
+    },
+    "operations": {
+      "name": "Operations & Supply Chain",
+      "keywords": [
+        "operations",
+        "supply chain",
+        "logistics",
+        "procurement",
+        "vendor",
+        "operations manager",
+        "process improvement",
+        "efficiency",
+        "operational excellence",
+        "facilities",
+        "warehouse",
+        "fulfillment",
+        "inventory",
+        "planning",
+        "forecasting",
+        "sourcing",
+        "manufacturing",
+        "quality control",
+        "compliance",
+        "process",
+        "lean",
+        "six sigma",
+        "project management"
+      ],
+      "departments": [
+        "operations",
+        "supply chain",
+        "logistics",
+        "procurement",
+        "facilities",
+        "manufacturing",
+        "quality",
+        "process",
+        "operational excellence"
+      ]
+    },
+    "finance": {
+      "name": "Finance & Accounting",
+      "keywords": [
+        "finance",
+        "accounting",
+        "financial analyst",
+        "controller",
+        "cfo",
+        "fp&a",
+        "financial planning",
+        "budgeting",
+        "forecasting",
+        "treasury",
+        "tax",
+        "audit",
+        "investment",
+        "corporate finance",
+        "business analyst",
+        "financial reporting",
+        "excel",
+        "modeling",
+        "valuation",
+        "roi",
+        "cost",
+        "pricing",
+        "revenue recognition",
+        "gaap",
+        "sox",
+        "compliance"
+      ],
+      "departments": [
+        "finance",
+        "accounting",
+        "treasury",
+        "fp&a",
+        "financial planning",
+        "business analysis",
+        "audit",
+        "tax",
+        "corporate finance"
+      ]
+    },
+    "hr": {
+      "name": "Human Resources & People",
+      "keywords": [
+        "human resources",
+        "hr",
+        "people",
+        "talent",
+        "recruiting",
+        "recruiter",
+        "sourcing",
+        "talent acquisition",
+        "people operations",
+        "hr business partner",
+        "compensation",
+        "benefits",
+        "payroll",
+        "employee relations",
+        "diversity",
+        "inclusion",
+        "dei",
+        "training",
+        "development",
+        "learning",
+        "onboarding",
+        "performance",
+        "culture",
+        "engagement",
+        "wellness",
+        "hris",
+        "workday"
+      ],
+      "departments": [
+        "hr",
+        "human resources",
+        "people",
+        "talent",
+        "recruiting",
+        "people operations",
+        "talent acquisition",
+        "diversity",
+        "learning",
+        "development"
+      ]
+    },
+    "legal": {
+      "name": "Legal & Compliance",
+      "keywords": [
+        "legal",
+        "lawyer",
+        "attorney",
+        "counsel",
+        "paralegal",
+        "compliance",
+        "regulatory",
+        "contracts",
+        "intellectual property",
+        "ip",
+        "privacy",
+        "data protection",
+        "gdpr",
+        "litigation",
+        "employment law",
+        "corporate law",
+        "securities",
+        "governance",
+        "risk management",
+        "policy",
+        "ethics",
+        "investigations"
+      ],
+      "departments": [
+        "legal",
+        "compliance",
+        "regulatory",
+        "governance",
+        "risk",
+        "ethics",
+        "privacy"
+      ]
+    },
+    "data": {
+      "name": "Data & Analytics",
+      "keywords": [
+        "data",
+        "analytics",
+        "data analyst",
+        "data scientist",
+        "business intelligence",
+        "bi",
+        "reporting",
+        "dashboard",
+        "metrics",
+        "kpi",
+        "sql",
+        "python",
+        "r",
+        "tableau",
+        "power bi",
+        "looker",
+        "data warehouse",
+        "etl",
+        "data pipeline",
+        "big data",
+        "hadoop",
+        "spark",
+        "statistics",
+        "modeling",
+        "machine learning",
+        "predictive",
+        "insights",
+        "visualization",
+        "research",
+        "experimentation",
+        "a/b testing"
+      ],
+      "departments": [
+        "data",
+        "analytics",
+        "business intelligence",
+        "data science",
+        "research",
+        "insights"
+      ]
+    },
+    "customer_success": {
+      "name": "Customer Success & Support",
+      "keywords": [
+        "customer success",
+        "customer support",
+        "customer service",
+        "account management",
+        "client success",
+        "customer experience",
+        "cx",
+        "support engineer",
+        "technical support",
+        "customer care",
+        "help desk",
+        "customer operations",
+        "onboarding",
+        "adoption",
+        "retention",
+        "churn",
+        "satisfaction",
+        "nps",
+        "escalation",
+        "troubleshooting",
+        "customer advocate",
+        "relationship management"
+      ],
+      "departments": [
+        "customer success",
+        "customer support",
+        "customer service",
+        "customer experience",
+        "support",
+        "client services",
+        "account management"
+      ]
+    },
+    "consulting": {
+      "name": "Consulting & Professional Services",
+      "keywords": [
+        "consultant",
+        "consulting",
+        "advisory",
+        "professional services",
+        "implementation",
+        "solutions",
+        "strategy consultant",
+        "management consultant",
+        "business consultant",
+        "technical consultant",
+        "engagement",
+        "client facing",
+        "delivery",
+        "project",
+        "transformation",
+        "optimization",
+        "best practices",
+        "methodology"
+      ],
+      "departments": [
+        "consulting",
+        "professional services",
+        "advisory",
+        "solutions",
+        "implementation",
+        "strategy",
+        "delivery"
+      ]
+    },
+    "other": {
+      "name": "Other",
+      "keywords": [
+        "intern",
+        "internship",
+        "entry level",
+        "associate",
+        "coordinator",
+        "assistant",
+        "specialist",
+        "administrator",
+        "executive",
+        "director",
+        "vice president",
+        "vp",
+        "c-level",
+        "ceo",
+        "cto",
+        "cmo",
+        "chief"
+      ],
+      "departments": [
+        "general",
+        "corporate",
+        "executive",
+        "administration",
+        "other"
+      ]
+    }
+  },
+  "categorization_rules": {
+    "priority_order": [
+      "technology",
+      "data",
+      "product",
+      "design",
+      "sales",
+      "marketing",
+      "operations",
+      "finance",
+      "hr",
+      "legal",
+      "customer_success",
+      "consulting",
+      "other"
+    ],
+    "title_weight": 0.6,
+    "department_weight": 0.3,
+    "description_weight": 0.1,
+    "min_confidence_threshold": 0.3,
+    "keyword_matching": {
+      "exact_match_bonus": 2.0,
+      "partial_match_penalty": 0.5,
+      "case_insensitive": true,
+      "stem_matching": true
+    }
+  },
+  "global_settings": {
+    "default_rate_limit": 2,
+    "default_timeout": 30,
+    "default_max_pages": 10,
+    "retry_attempts": 3,
+    "retry_delay": 5,
+    "concurrent_limit": 3,
+    "user_agent_rotation": true,
+    "proxy_rotation": false,
+    "screenshot_on_error": true,
+    "save_raw_html": false,
+    "enable_categorization": true,
+    "max_jobs_per_company": 500,
+    "max_jobs_per_category": 100
+  },
+  "user_agents": [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/119.0",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+  ],
+  "common_wait_conditions": {
+    "job_listings_loaded": {
+      "type": "element_present",
+      "selector": "[data-testid='job-posting'], .job-tile, .table-row, .job-card, .lLd3Je",
+      "timeout": 10
+    },
+    "page_loaded": {
+      "type": "page_load_state",
+      "state": "networkidle",
+      "timeout": 15
+    },
+    "search_results": {
+      "type": "element_present",
+      "selector": ".search-results, .job-results, .search-results-container",
+      "timeout": 10
+    }
+  },
+  "error_handling": {
+    "max_consecutive_errors": 5,
+    "error_cooldown_minutes": 10,
+    "screenshot_on_error": true,
+    "save_error_html": true,
+    "error_notification": false
+  },
+  "data_quality": {
+    "min_title_length": 5,
+    "max_title_length": 200,
+    "min_description_length": 50,
+    "max_description_length": 10000,
+    "required_fields": [
+      "title",
+      "company",
+      "location",
+      "category"
+    ],
+    "validation_rules": {
+      "title_blacklist": [
+        "test",
+        "sample",
+        "example",
+        "placeholder"
+      ],
+      "location_whitelist": [],
+      "category_required": true,
+      "department_mapping": {
+        "eng": "Engineering",
+        "dev": "Development",
+        "qa": "Quality Assurance",
+        "pm": "Product Management",
+        "mktg": "Marketing",
+        "hr": "Human Resources",
+        "ops": "Operations",
+        "biz": "Business",
+        "corp": "Corporate"
+      }
+    }
+  }
+}

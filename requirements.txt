@@ -1,0 +1,77 @@
+# FastAPI and web framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# Web scraping
+selenium==4.15.2
+playwright==1.40.0
+beautifulsoup4==4.12.2
+requests==2.31.0
+
+# Data validation and models
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Database (for future migration)
+sqlalchemy==2.0.23
+alembic==1.13.1
+
+# Data processing
+pandas>=2.2.3
+
+# Environment and configuration
+python-dotenv==1.0.0
+
+# Logging and monitoring
+structlog==23.2.0
+
+# Rate limiting and async
+asyncio-throttle==1.0.2
+aiohttp==3.9.1
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-mock==3.12.0
+httpx==0.25.2  # For testing FastAPI
+
+# Code quality
+black==23.11.0
+flake8==6.1.0
+isort==5.12.0
+
+# Type checking
+mypy==1.7.1
+types-requests==2.31.0.10
+
+# Documentation
+mkdocs==1.5.3
+mkdocs-material==9.4.8
+
+# Development tools
+pre-commit==3.6.0
+
+# Chrome WebDriver Manager (for Selenium)
+webdriver-manager==4.0.1
+
+# JSON handling
+orjson==3.9.10
+
+# Date/time handling
+python-dateutil==2.8.2
+
+# Retry logic
+tenacity==8.2.3
+
+# HTTP client for async operations
+httpcore==1.0.2
+
+# Validation and parsing
+validators==0.22.0
+
+# CLI tools
+click==8.1.7
+rich==13.7.0  # For beautiful CLI output
+
+# Scheduling
+APScheduler==3.10.4
